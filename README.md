@@ -16,9 +16,9 @@ Example file (name, hours worked, pay rate):
 
 Example file (name, total pay):
 
-    Maria Brown 2295.0
-    Jeffrey Jackson 1451.25
-    Bernard Smith 540.0
-    Matthew Davenport 310.0
-    Kimberly Macias 698.75
-    Amber Daniels 372.69
+    Maria Brown $2295.0
+    Jeffrey Jackson $1451.25
+    Bernard Smith $540.0
+    Matthew Davenport $310.0
+    Kimberly Macias $698.75
+    Amber Daniels $372.69
