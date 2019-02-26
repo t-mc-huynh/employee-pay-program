@@ -9,26 +9,26 @@ Person::Person() {
 	payRate = 0.00;
 	hoursWorked = 0.00;
 }
-void Person::setLastName(string lastName) {
-	this->lastName = lastName;
+void Person::setLastName(string lName) {
+	lastName = lName;
 }
 string Person::getLastName() {
 	return lastName;
 }
-void Person::setFirstName(string firstName) {
-	this->firstName = firstName;
+void Person::setFirstName(string fName) {
+	firstName = fName;
 }
 string Person::getFirstName() {
 	return firstName;
 }
-void Person::setPayRate(float payRate) {
-	this->payRate = payRate;
+void Person::setPayRate(float rate) {
+	payRate = rate;
 }
 float Person::getPayRate() {
 	return payRate;
 }
-void Person::setHoursWorked(float hoursWorked) {
-	this->hoursWorked = hoursWorked;
+void Person::setHoursWorked(float hours) {
+	hoursWorked = hours;
 }
 float Person::getHoursWorked() {
 	return hoursWorked;
