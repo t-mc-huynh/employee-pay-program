@@ -36,7 +36,7 @@ void readData(string fileName, vector<Person> &employees) {
 		employee.setLastName(lname);
 		employee.setHoursWorked(hours);
 		employee.setPayRate(rate);
-		employees.push_back(employee);
+		employees.emplace_back(employee);
 	}
 
 	inFile.close();
