@@ -1,25 +1,25 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <vector>
 #include <fstream>
-#include "person.h"
+#include "person.cpp"
 using namespace std;
 
-void readData(string fileName, Person employees[], int & j);
-void writeData(string fileName, Person employees[], int &j);
+void readData(string fileName, vector<Person> &employees);
+void writeData(string fileName, vector<Person> &employees);
 
 int main() {
 	string fileName = "input.txt";
-	Person employees[20];
-	int j = 0;
+	vector<Person> employees;
 
-	readData(fileName, employees, j);
+	readData(fileName, employees);
 
 	fileName = "output.txt";
-	writeData(fileName, employees, j);
+	writeData(fileName, employees);
 }
 
-void readData(string fileName, Person employees[], int & j) {
+void readData(string fileName, vector<Person> &employees) {
 	ifstream inFile;
 	inFile.open("input.txt");
 
@@ -36,21 +36,23 @@ void readData(string fileName, Person employees[], int & j) {
 		employee.setLastName(lname);
 		employee.setHoursWorked(hours);
 		employee.setPayRate(rate);
-		employees[j] = employee;
-		j++;
+		employees.push_back(employee);
 	}
 
 	inFile.close();
 }
 
-void writeData(string fileName, Person employees[], int &j) {
+void writeData(string fileName, vector<Person> &employees) {
 	ofstream outFile;
 	outFile.open(fileName);
 
-	for (int i = 0; i < j; i++) {
-		outFile << employees[i].fullName() << "\t";
-		outFile << fixed << setprecision(2) << "$" << employees[i].totalPay() << endl;
+	for (int i = 0; i < employees.size(); i++)
+	{
+		outFile << employees.at(i).fullName() << "\t";
+		outFile << fixed << setprecision(2) << "$" << employees.at(i).totalPay() << endl;
 	}
+
+	cout << "File updated..." << endl;
 
 	outFile.close();
 }
